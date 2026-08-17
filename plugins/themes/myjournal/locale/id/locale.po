@@ -1,0 +1,111 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: My Journal Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-08-09T00:00:00+00:00\n"
+"PO-Revision-Date: 2026-08-09T00:00:00+00:00\n"
+"Language: id\n"
+
+msgid "plugins.themes.myjournal.name"
+msgstr "Accessible Theme"
+
+msgid "plugins.themes.myjournal.description"
+msgstr "Child theme dari Health Sciences, disesuaikan untuk jurnal disability studies."
+
+msgid "plugins.themes.myjournal.homepageLabel"
+msgstr "Jurnal"
+
+msgid "plugins.themes.myjournal.heroLabel"
+msgstr "Universitas Brawijaya"
+
+msgid "plugins.themes.myjournal.heroTitle"
+msgstr "Research, empowerment, and inclusive practice"
+
+msgid "plugins.themes.myjournal.heroTagline"
+msgstr "Pioneering disability studies in Indonesia"
+
+msgid "plugins.themes.myjournal.heroSubmit"
+msgstr "Kirim naskah"
+
+msgid "plugins.themes.myjournal.heroCurrentIssue"
+msgstr "Edisi terkini"
+
+msgid "plugins.themes.myjournal.navToggle"
+msgstr "Buka atau tutup menu"
+
+msgid "plugins.themes.myjournal.siteNav"
+msgstr "Situs"
+
+msgid "plugins.themes.myjournal.htmlGalleyLabel"
+msgstr "Teks lengkap (HTML)"
+
+msgid "plugins.themes.myjournal.htmlGalleyBack"
+msgstr "Kembali ke halaman artikel"
+
+msgid "plugins.themes.myjournal.htmlGalleyToc"
+msgstr "Daftar isi"
+
+msgid "plugins.themes.myjournal.themeDark"
+msgstr "Ganti ke mode gelap"
+
+msgid "plugins.themes.myjournal.themeLight"
+msgstr "Ganti ke mode terang"
+
+msgid "plugins.themes.myjournal.skipToContent"
+msgstr "Lewati ke konten utama"
+
+msgid "plugins.themes.myjournal.option.accentColour.label"
+msgstr "Warna aksen (tombol kirim naskah)"
+
+msgid "plugins.themes.myjournal.option.accentColour.description"
+msgstr "Emas untuk tombol kirim di beranda dan skip link. Navy jurnal (#112d52) tidak dapat diubah."
+
+msgid "plugins.themes.myjournal.option.enableThemeToggle.label"
+msgstr "Tombol mode gelap"
+
+msgid "plugins.themes.myjournal.option.enableThemeToggle.description"
+msgstr "Tampilkan kontrol terang/gelap di header situs."
+
+msgid "plugins.themes.myjournal.option.enableThemeToggle.yes"
+msgstr "Tampilkan"
+
+msgid "plugins.themes.myjournal.option.enableThemeToggle.no"
+msgstr "Sembunyikan"
+
+msgid "plugins.themes.myjournal.option.heroLabel.label"
+msgstr "Label hero"
+
+msgid "plugins.themes.myjournal.option.heroTitle.label"
+msgstr "Judul hero"
+
+msgid "plugins.themes.myjournal.option.heroTagline.label"
+msgstr "Tagline hero"
+
+msgid "plugins.themes.myjournal.option.heroText.description"
+msgstr "Kosongkan untuk memakai teks bawaan tema sesuai bahasa aktif."
+
+msgid "plugins.themes.myjournal.archiveSortLabel"
+msgstr "Urutkan edisi"
+
+msgid "plugins.themes.myjournal.archiveSortNewest"
+msgstr "Terbaru"
+
+msgid "plugins.themes.myjournal.archiveSortOldest"
+msgstr "Terlama"
+
+msgid "plugins.themes.myjournal.archiveYearLabel"
+msgstr "Tahun"
+
+msgid "plugins.themes.myjournal.archiveYearAll"
+msgstr "Semua tahun"
+
+msgid "plugins.themes.myjournal.archiveApply"
+msgstr "Terapkan"
+
+msgid "plugins.themes.myjournal.archiveEmptyYear"
+msgstr "Tidak ada edisi pada tahun itu."

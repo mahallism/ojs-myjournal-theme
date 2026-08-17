@@ -1,0 +1,600 @@
+/* Dark mode surfaces and overrides */
+
+// ---------------------------------------------------------------------------
+// Dark mode — surfaces, article main, homepage issue, readable text
+// ---------------------------------------------------------------------------
+html[data-theme="dark"] {
+	body {
+		background: var(--mj-bg) !important;
+		color: var(--mj-ink) !important;
+	}
+
+	.main-header.myjournal-header {
+		background: @sldpi-navy-deep;
+		border-bottom-color: fade(@contrast, 12%);
+	}
+
+	// Broad page shells (Health Sciences often hardcodes light greys)
+	.page-content,
+	.page-article,
+	.page_index_journal,
+	.container-homepage-issue,
+	.pkp_structure_content,
+	.pkp_structure_main,
+	.page,
+	.obj_article_details,
+	.article-details,
+	.cmp_breadcrumbs,
+	.main_content,
+	#main-content {
+		background-color: transparent;
+		color: var(--mj-ink);
+	}
+
+	.page-login .page-content,
+	.page-register .page-content,
+	.page-register-complete .page-content,
+	.page-lost-password .page-content {
+		background: var(--mj-surface) !important;
+		border-color: var(--mj-line);
+		color: var(--mj-ink);
+	}
+
+	.page-search,
+	.page-archives,
+	.page-about,
+	.page-submissions,
+	.page-contact,
+	.page-issue,
+	.page-login,
+	.page-register,
+	.page-register-complete,
+	.page-lost-password,
+	.search-filters,
+	.search-results,
+	.issue-summary {
+		background-color: transparent;
+		color: var(--mj-ink);
+	}
+
+	.search-filters {
+		background: var(--mj-surface) !important;
+		border-color: var(--mj-line);
+
+		h2,
+		label {
+			color: var(--mj-brand) !important;
+		}
+
+		.form-control {
+			background: var(--mj-bg) !important;
+			border-color: var(--mj-line);
+			color: var(--mj-ink);
+		}
+	}
+
+	.myjournal-archive-toolbar,
+	.myjournal-archive-sort,
+	.myjournal-archive-year__select {
+		background: var(--mj-surface);
+		border-color: var(--mj-line);
+		color: var(--mj-ink);
+	}
+
+	.myjournal-archive-sort__btn {
+		color: var(--mj-link);
+		border-color: var(--mj-line);
+
+		&:hover,
+		&:focus {
+			color: var(--mj-link-hover);
+			background: var(--mj-brand-soft);
+		}
+
+		&.is-active {
+			color: #0a1a33 !important;
+			background: var(--mj-brand) !important;
+		}
+	}
+
+	.myjournal-archive-year__label {
+		color: var(--mj-brand);
+	}
+
+	.myjournal-archive-year__submit {
+		background: var(--mj-brand) !important;
+		border-color: var(--mj-brand) !important;
+		color: #0a1a33 !important;
+	}
+
+	.issue-summary {
+		background: var(--mj-surface);
+		border-color: var(--mj-line);
+
+		.issue-summary-series a {
+			color: var(--mj-link) !important;
+
+			&:hover,
+			&:focus {
+				color: var(--mj-link-hover) !important;
+			}
+		}
+
+		.issue-summary-title,
+		.issue-summary-date {
+			color: var(--mj-muted);
+		}
+	}
+
+	.alert-primary {
+		background: var(--mj-brand-soft) !important;
+		border-color: var(--mj-line) !important;
+		color: var(--mj-ink) !important;
+
+		a {
+			color: var(--mj-link) !important;
+		}
+	}
+
+	.article-details-issue-identifier a,
+	.authors-string .author-string-href {
+		color: var(--mj-link);
+
+		&:hover,
+		&.active {
+			color: var(--mj-link-hover);
+		}
+	}
+
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		color: var(--mj-ink);
+	}
+
+	p, li, td, th, label, dt, dd,
+	.article-summary,
+	.article-summary-title,
+	.article-summary-authors,
+	.article-summary-pages,
+	.issue-toc,
+	.issue-toc-section-title,
+	.homepage-issue-current,
+	.homepage-issue-identifier,
+	.homepage-issue-published,
+	.homepage-issue-description,
+	.homepage-additional-content,
+	.announcement-summary-description,
+	.page-header,
+	.breadcrumb,
+	.cmp_breadcrumbs a,
+	.cmp_breadcrumbs li {
+		color: var(--mj-ink);
+	}
+
+	@media (min-width: 1200px) {
+		.homepage-image-behind-issue + .container-homepage-issue {
+			.myjournal-issue-kicker {
+				background: none;
+				border: 0;
+				box-shadow: none;
+			}
+
+			.homepage-issue-current,
+			.homepage-issue-identifier,
+			.homepage-issue-published {
+				color: #ffffff !important;
+			}
+
+			.homepage-issue-published {
+				color: fade(#ffffff, 88%) !important;
+			}
+		}
+	}
+
+	a:not(.btn):not(.nav-link):not(.dropdown-item):not(.myjournal-hero__btn) {
+		color: var(--mj-link);
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: var(--mj-link-hover) !important;
+		}
+	}
+
+	// Buttons — parent HS uses @primary (#112d52) on hover (invisible on dark)
+	.btn,
+	.btn:visited {
+		color: var(--mj-link);
+		border-color: var(--mj-link);
+		background: transparent;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: var(--mj-link-hover) !important;
+			border-color: var(--mj-link-hover) !important;
+			background: var(--mj-brand-soft) !important;
+		}
+	}
+
+	.btn-primary,
+	.btn-primary:visited,
+	.article-summary-galleys .btn-primary,
+	.myjournal-more-btn {
+		background: var(--mj-brand) !important;
+		border-color: var(--mj-brand) !important;
+		// Navy text on turquoise fill — keep on hover (parent sets dark bg + our color would clash)
+		color: #112d52 !important;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: var(--mj-link-hover) !important;
+			border-color: var(--mj-link-hover) !important;
+			color: #0a1a33 !important;
+		}
+	}
+
+	.btn-outline-primary,
+	.btn-outline-secondary {
+		border-color: var(--mj-link) !important;
+		color: var(--mj-link) !important;
+		background: transparent !important;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: var(--mj-brand-soft) !important;
+			border-color: var(--mj-link-hover) !important;
+			color: var(--mj-link-hover) !important;
+		}
+	}
+
+	.btn-secondary,
+	.btn-light {
+		background: var(--mj-surface) !important;
+		border-color: var(--mj-line) !important;
+		color: var(--mj-ink) !important;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: var(--mj-brand-soft) !important;
+			border-color: var(--mj-link) !important;
+			color: var(--mj-link) !important;
+		}
+	}
+
+	.btn-link,
+	.btn-text {
+		color: var(--mj-link) !important;
+		border-color: transparent !important;
+		background: transparent !important;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: var(--mj-link-hover) !important;
+		}
+	}
+
+	// Article page — #articleMain uses @light-grey in parent theme
+	.article-details-main,
+	#articleMain {
+		background: var(--mj-surface) !important;
+		border-color: var(--mj-line);
+		color: var(--mj-ink) !important;
+	}
+
+	.article-details-heading,
+	.article-details-main .item > .label,
+	.article-details .item > .label {
+		color: var(--mj-brand) !important;
+		font-weight: 700;
+	}
+
+	.article-details-fulltitle,
+	.article-details h1 {
+		color: var(--mj-brand) !important;
+		font-weight: 700;
+	}
+
+	.article-details-fulltitle,
+	.article-details h1,
+	.article-details-issue-identifier,
+	.article-details-issue-section,
+	.article-details-published,
+	.article-details-doi,
+	.article-details-authors,
+	.article-details-author-name,
+	.article-details-author-affiliation,
+	.article-details-abstract,
+	.article-details-references,
+	.article-details-references-value,
+	.article-details-how-to-cite-citation,
+	.article-details-license,
+	.article-details-keywords-value,
+	.article-details-sidebar,
+	.article-meta-mobile {
+		color: var(--mj-ink);
+	}
+
+	.article-details-keywords-value span {
+		background: var(--mj-bg-soft);
+		border-color: var(--mj-line);
+		color: var(--mj-ink);
+	}
+
+	.article-details-bio-toggle {
+		color: var(--mj-link) !important;
+
+		&:hover,
+		&:focus {
+			color: var(--mj-link-hover) !important;
+		}
+	}
+
+	// Issue description panels (homepage + issue archive page)
+	.homepage-issue-description-wrapper,
+	.page-issue-description-wrapper {
+		background: var(--mj-surface) !important;
+		border-color: var(--mj-line);
+		color: var(--mj-ink) !important;
+	}
+
+	.homepage-issue-description,
+	.page-issue-description {
+		color: var(--mj-ink) !important;
+
+		&:after {
+			display: none;
+		}
+
+		.h2,
+		h2 {
+			color: var(--mj-brand) !important;
+			font-weight: 700;
+		}
+	}
+
+	#homepageDescriptionMore,
+	#homepageDescriptionLess {
+		color: var(--mj-link) !important;
+	}
+
+	.homepage-announcement-date,
+	.article-details-published,
+	.article-summary-pages,
+	.page-issue-date,
+	.page-issue-doi,
+	.page-issue-doi a,
+	.text-muted,
+	.mid-grey {
+		color: var(--mj-muted) !important;
+	}
+
+	.issue-toc-section,
+	.article-summary,
+	.media-list .media {
+		border-color: var(--mj-line);
+		color: var(--mj-ink);
+	}
+
+	.article-summary {
+		background: var(--mj-surface);
+
+		.article-summary-title a {
+			color: var(--mj-link) !important;
+
+			&:hover,
+			&:focus {
+				color: var(--mj-link-hover, #a8ebe3) !important;
+			}
+		}
+
+		.article-summary-authors {
+			color: var(--mj-ink);
+		}
+
+		.article-summary-footer {
+			border-top-color: var(--mj-line);
+		}
+	}
+
+	.myjournal-announcement-card__title a,
+	.issue-toc-section-title,
+	.myjournal-announcements__heading,
+	.myjournal-html-galley__reader-title,
+	.myjournal-html-galley__back {
+		color: var(--mj-brand) !important;
+	}
+
+	.myjournal-announcement-card__more,
+	.myjournal-announcement-card__title a:hover,
+	.myjournal-announcement-card__title a:focus {
+		color: var(--mj-link-hover, #a8ebe3) !important;
+	}
+
+	.myjournal-view-all-issues .btn {
+		color: var(--mj-link) !important;
+		border-color: var(--mj-link) !important;
+		background: transparent;
+
+		&:hover,
+		&:focus {
+			color: var(--mj-link-hover) !important;
+			border-color: var(--mj-link-hover) !important;
+			background: var(--mj-brand-soft);
+		}
+	}
+
+	.myjournal-announcements {
+		border-top-color: var(--mj-link);
+	}
+
+	.myjournal-hero__btn--primary {
+		background: var(--mj-gold) !important;
+		border-color: var(--mj-gold) !important;
+		color: #112d52 !important;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: var(--mj-gold-hover) !important;
+			border-color: var(--mj-gold-hover) !important;
+			color: #0a1a33 !important;
+		}
+	}
+
+	.myjournal-hero__btn--ghost {
+		color: #f5f8fc !important;
+		border-color: fade(#ffffff, 85%) !important;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: #ffffff !important;
+			background: fade(#ffffff, 12%) !important;
+		}
+	}
+
+	.form-control,
+	input[type="text"],
+	input[type="search"],
+	input[type="email"],
+	input[type="password"],
+	textarea,
+	select {
+		background: var(--mj-surface);
+		border-color: var(--mj-line);
+		color: var(--mj-ink);
+	}
+
+	.table,
+	.table td,
+	.table th {
+		color: var(--mj-ink);
+		border-color: var(--mj-line);
+	}
+
+	.card,
+	.list-group-item,
+	.modal-content {
+		background: var(--mj-surface);
+		color: var(--mj-ink);
+		border-color: var(--mj-line);
+	}
+
+	.sidebar,
+	.pkp_structure_sidebar,
+	.block {
+		background: var(--mj-surface);
+		color: var(--mj-ink);
+		border-color: var(--mj-line);
+	}
+
+	.site-footer .sidebar,
+	.site-footer .pkp_structure_sidebar,
+	.site-footer .block,
+	.site-footer .pkp_block {
+		background: transparent !important;
+		color: #ffffff !important;
+		border-color: fade(#ffffff, 28%);
+	}
+
+	.myjournal-html-galley {
+		&__reader {
+			border-top-color: var(--mj-line);
+		}
+
+		&__reader-title {
+			color: var(--mj-brand);
+		}
+
+		&__back {
+			color: var(--mj-link) !important;
+
+			&:hover,
+			&:focus {
+				color: var(--mj-link-hover) !important;
+			}
+		}
+
+		&__toc-details {
+			background: var(--mj-surface);
+			border-color: var(--mj-line);
+		}
+
+		&__toc-summary {
+			color: var(--mj-brand);
+		}
+
+		&__toc-link {
+			color: var(--mj-link);
+
+			&:hover,
+			&:focus {
+				color: var(--mj-link-hover);
+				background: var(--mj-brand-soft);
+			}
+
+			&.is-active {
+				color: var(--mj-link-hover);
+				border-left-color: var(--mj-brand);
+				background: var(--mj-brand-soft);
+			}
+
+			&.is-h4 {
+				color: var(--mj-muted);
+			}
+		}
+
+		&__frame-wrap {
+			border-color: var(--mj-line);
+			background: var(--mj-surface);
+		}
+
+		&__frame {
+			background: var(--mj-surface);
+		}
+	}
+
+	.footer,
+	.pkp_structure_footer,
+	.site-footer {
+		background: @primary !important;
+		color: #ffffff;
+		border-top: 0;
+		box-shadow: none;
+	}
+
+	.site-footer-content,
+	.site-footer-content .row {
+		background: transparent !important;
+		border-top: 0 !important;
+		box-shadow: none;
+		color: #ffffff;
+	}
+
+	.site-footer-sidebar {
+		border-bottom-color: fade(#ffffff, 28%);
+	}
+
+	.site-footer a:not(.btn) {
+		color: #ffffff !important;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: var(--mj-link-hover) !important;
+		}
+	}
+
+	.site-footer .title,
+	.site-footer p,
+	.site-footer li,
+	.site-footer h2,
+	.site-footer h3 {
+		color: #ffffff !important;
+	}
+}

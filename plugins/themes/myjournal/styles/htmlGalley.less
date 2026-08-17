@@ -1,0 +1,94 @@
+/**
+ * HTML galley (iframe) styles — match My Journal / Source Sans 3.
+ * Loaded in the htmlGalley context by HtmlArticleGalleyPlugin.
+ */
+
+@import "fonts.less";
+
+@font-mj: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
+
+body {
+	font-family: @font-mj !important;
+	font-size: 1.125rem;
+	line-height: 1.65;
+	color: #142033;
+	background: #ffffff;
+}
+
+p, h1, h2, h3, h4, h5, h6, li, td, th, blockquote {
+	font-family: @font-mj !important;
+}
+
+p {
+	font-size: 1.125rem;
+	line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #112d52;
+	font-weight: 700;
+	scroll-margin-top: 1rem;
+}
+
+a {
+	color: #1a406e;
+
+	&:hover,
+	&:focus {
+		color: #112d52;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		color: #e8eef7;
+		background: #0b1524;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: #dbe6f5;
+	}
+
+	a {
+		color: #7ed4c8;
+
+		&:hover,
+		&:focus {
+			color: #a8ebe3;
+		}
+	}
+}
+
+html[data-theme="dark"] body,
+body[data-theme="dark"] {
+	color: #e8eef7;
+	background: #0b1524;
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6,
+body[data-theme="dark"] h1,
+body[data-theme="dark"] h2,
+body[data-theme="dark"] h3,
+body[data-theme="dark"] h4,
+body[data-theme="dark"] h5,
+body[data-theme="dark"] h6 {
+	color: #dbe6f5;
+}
+
+html[data-theme="dark"] a,
+body[data-theme="dark"] a {
+	color: #7ed4c8;
+}
+
+@media (min-width: 992px) {
+	body {
+		max-width: 48rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

@@ -1,0 +1,469 @@
+/* Sticky header */
+
+// Header: sticky navy bar — logo | primary menu | tools
+.myjournal-header {
+	position: sticky;
+	top: 0;
+	z-index: 1030;
+	background: @primary;
+	border-bottom: 1px solid fade(@contrast, 18%);
+	box-shadow: 0 1px 0 fade(@sldpi-navy-deep, 35%);
+
+	.container {
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
+	}
+
+	&__bar {
+		display: block;
+	}
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		padding: 0;
+		width: 100%;
+	}
+
+	&__logo {
+		display: block !important;
+		flex: 0 0 auto;
+		order: 0;
+		max-width: 16.5rem;
+		margin-right: 1rem;
+		padding: 0;
+		line-height: 1;
+		min-height: 48px;
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+
+		img {
+			display: block !important;
+			visibility: visible !important;
+			opacity: 1 !important;
+			width: auto !important;
+			height: 48px !important;
+			max-width: 100% !important;
+			max-height: none !important;
+			// Wordmark is dark navy — invert so it reads on blue bar
+			filter: brightness(0) invert(1);
+		}
+	}
+
+	&__logo-img {
+		display: block !important;
+		width: auto !important;
+		height: 48px !important;
+		max-width: 100% !important;
+		max-height: none !important;
+		filter: brightness(0) invert(1);
+	}
+
+	&__toggler {
+		order: 1;
+		margin-left: auto;
+		border: 1px solid fade(@contrast, 55%);
+		min-height: 44px;
+		min-width: 44px;
+
+		.navbar-toggler-icon {
+			filter: invert(1) brightness(1.2);
+		}
+	}
+
+	&__collapse {
+		order: 2;
+		flex-basis: 100%;
+		align-items: stretch;
+		padding-top: 0.75rem;
+	}
+
+	&__menu {
+		gap: 0.15rem;
+	}
+
+	&__tools {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem;
+		margin-top: 0.75rem;
+		padding-top: 0.75rem;
+		border-top: 1px solid fade(@contrast, 18%);
+	}
+
+	&__search {
+		display: flex;
+		align-items: stretch;
+		flex: 0 0 auto;
+		position: relative;
+	}
+
+	&__search-input {
+		width: 0;
+		min-width: 0;
+		min-height: 44px;
+		padding: 0;
+		border: 0;
+		opacity: 0;
+		pointer-events: none;
+		font-size: 0.95rem;
+		font-family: @font-sans;
+		color: @primary-text;
+		background: @contrast;
+		transition: width 0.2s ease, opacity 0.15s ease, padding 0.2s ease;
+	}
+
+	&__search.is-open &__search-input,
+	&__search:focus-within &__search-input {
+		width: ~"min(12rem, 55vw)";
+		opacity: 1;
+		pointer-events: auto;
+		padding: 0.4rem 0.7rem;
+		border: 1px solid fade(@contrast, 35%);
+		border-right: 0;
+		border-radius: 6px 0 0 6px;
+	}
+
+	&__search-submit {
+		flex: 0 0 auto;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 44px;
+		min-height: 44px;
+		padding: 0;
+		border: 1px solid fade(@contrast, 55%);
+		border-radius: 6px;
+		background: fade(@contrast, 12%);
+		color: @contrast;
+		line-height: 0;
+
+		&:hover,
+		&:focus {
+			background: fade(@contrast, 22%);
+			border-color: @contrast;
+			color: @contrast;
+		}
+	}
+
+	&__search.is-open &__search-submit,
+	&__search:focus-within &__search-submit {
+		border-radius: 0 6px 6px 0;
+		background: @contrast;
+		border-color: @contrast;
+		color: @primary;
+	}
+
+	&__theme {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 44px;
+		min-height: 44px;
+		padding: 0;
+		border: 1px solid fade(@contrast, 55%);
+		border-radius: 6px;
+		background: fade(@contrast, 12%);
+		color: @contrast;
+		line-height: 0;
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			border-color: @contrast;
+			background: fade(@contrast, 22%);
+			color: @contrast;
+		}
+
+		.myjournal-header__icon--sun {
+			display: none;
+		}
+
+		&.is-dark .myjournal-header__icon--moon {
+			display: none;
+		}
+
+		&.is-dark .myjournal-header__icon--sun {
+			display: block;
+		}
+	}
+
+	&__icon {
+		display: block;
+	}
+
+	.language-toggle {
+		position: static;
+
+		.btn {
+			min-height: 44px;
+			border: 1px solid fade(@contrast, 55%);
+			background: fade(@contrast, 12%);
+			color: @contrast;
+			font-size: 0.85rem;
+			font-family: @font-sans;
+			text-transform: none;
+
+			&:hover,
+			&:focus {
+				background: fade(@contrast, 22%);
+				border-color: @contrast;
+				color: @contrast;
+			}
+		}
+	}
+
+	#userNav {
+		display: flex;
+		flex-wrap: wrap;
+		position: static;
+		align-items: center;
+		gap: 0.15rem;
+
+		.nav-link,
+		.dropdown-toggle {
+			color: @contrast !important;
+			border-color: transparent;
+			font-size: 0.9rem;
+			font-weight: 600;
+			font-family: @font-sans;
+			text-transform: none;
+
+			&:hover,
+			&:focus {
+				color: @contrast !important;
+				background: fade(@contrast, 14%);
+				border-color: fade(@contrast, 35%);
+				outline: 0;
+			}
+		}
+
+		.dropdown-menu {
+			background: @sldpi-navy-deep;
+			border: 1px solid fade(@contrast, 12%);
+		}
+
+		.dropdown-item {
+			color: @contrast;
+
+			&:hover,
+			&:focus {
+				background: @sldpi-navy-mid;
+				color: @contrast;
+			}
+		}
+	}
+
+	.navbar-light .navbar-nav {
+		.nav-link,
+		.dropdown-item {
+			color: @contrast;
+			text-transform: none;
+			font-size: 0.95rem;
+			font-weight: 600;
+			font-family: @font-sans;
+
+			&:hover,
+			&:focus {
+				background: fade(@contrast, 14%);
+				color: @contrast;
+				outline: 0;
+			}
+		}
+
+		.dropdown-menu {
+			background: @sldpi-navy-deep;
+			border: 1px solid fade(@contrast, 12%);
+			border-radius: 6px;
+			padding: 0.35rem 0;
+		}
+
+		.dropdown-item {
+			display: block;
+			width: 100%;
+			text-align: left;
+			color: @contrast;
+			font-weight: 500;
+			padding: 0.5rem 1rem;
+
+			&:hover,
+			&:focus {
+				background: @sldpi-navy-mid;
+				color: @contrast;
+			}
+		}
+	}
+
+	#primaryNav {
+		width: auto;
+		justify-content: flex-start;
+		padding: 0;
+
+		.nav-item {
+			position: relative;
+			white-space: nowrap;
+		}
+
+		.nav-link {
+			padding: 0.55rem 0.75rem;
+			border: 0;
+			line-height: 1.4;
+			color: @contrast;
+
+			&:hover,
+			&:focus {
+				background: fade(@contrast, 14%);
+				color: @contrast;
+				border-color: transparent;
+			}
+		}
+
+		.dropdown-menu,
+		.dropdown-menu.show {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: auto;
+			min-width: 14rem;
+			max-width: 22rem;
+			margin: 0.15rem 0 0;
+			padding: 0.35rem 0;
+			background: @sldpi-navy-deep;
+			border-radius: 6px;
+			flex-wrap: nowrap;
+			justify-content: flex-start;
+			align-content: flex-start;
+		}
+
+		.dropdown-menu.show {
+			display: block;
+			z-index: 1050;
+		}
+
+		.dropdown-item {
+			font-size: 0.95rem;
+			text-align: left;
+			width: 100%;
+			color: @contrast;
+			padding: 0.5rem 1rem;
+			line-height: 1.4;
+
+			&:hover,
+			&:focus {
+				background: @sldpi-navy-mid;
+				color: @contrast;
+				border-color: transparent;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.myjournal-header {
+		.container {
+			padding-top: 0.85rem;
+			padding-bottom: 0.85rem;
+		}
+
+		&__bar {
+			display: block;
+		}
+
+		&__logo {
+			display: block !important;
+			max-width: 15.5rem;
+			margin-right: 1.25rem;
+			min-height: 52px;
+
+			img {
+				height: 52px !important;
+			}
+		}
+
+		&__logo-img {
+			height: 52px !important;
+		}
+
+		&__nav {
+			flex-wrap: nowrap;
+		}
+
+		&__toggler {
+			display: none;
+		}
+
+		&__collapse {
+			order: 2;
+			flex: 1 1 auto;
+			flex-basis: auto;
+			display: flex !important;
+			flex-wrap: nowrap;
+			align-items: center;
+			justify-content: space-between;
+			gap: 1rem;
+			padding-top: 0;
+			width: auto;
+		}
+
+		&__tools {
+			flex: 0 0 auto;
+			margin-top: 0;
+			margin-left: auto;
+			padding-top: 0;
+			border-top: 0;
+		}
+
+		&__search {
+			flex: 0 0 auto;
+		}
+
+		&__search-submit,
+		&__theme,
+		.language-toggle .btn {
+			min-height: 40px;
+		}
+
+		&__search-submit,
+		&__theme {
+			width: 40px;
+		}
+
+		&__search.is-open &__search-input,
+		&__search:focus-within &__search-input {
+			width: 11rem;
+			min-height: 40px;
+		}
+
+		#primaryNav .dropdown-menu.show {
+			display: block;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.myjournal-header {
+		&__logo {
+			max-width: 18rem;
+		}
+
+		&__search.is-open &__search-input,
+		&__search:focus-within &__search-input {
+			width: 13rem;
+		}
+	}
+}
+
+@media (max-width: 575px) {
+	.myjournal-header {
+		&__logo {
+			max-width: 11rem;
+		}
+	}
+}
+

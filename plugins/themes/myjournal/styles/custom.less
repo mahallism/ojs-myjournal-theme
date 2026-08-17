@@ -1,0 +1,18 @@
+// My Journal — Health Sciences child stylesheet entrypoint.
+// Brand: SLDPI navy (light), soft turquoise accents (dark).
+// Typeface: Source Sans 3 (self-hosted).
+//
+// LESS pitfalls (wikimedia/less.php in OJS):
+// - Escape CSS min/clamp/max: width: ~"min(12rem, 55vw)";
+// - Never use grid-column with slash span; use start/end properties.
+// Prefer CSS variables (--mj-*) for light/dark; reserve !important for parent fights only.
+
+@import "fonts.less";
+@import "tokens.less";
+@import "header.less";
+@import "hero.less";
+@import "homepage.less";
+@import "pages.less";
+@import "galley.less";
+@import "dark.less";
+

@@ -1,0 +1,111 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: My Journal Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-08-09T00:00:00+00:00\n"
+"PO-Revision-Date: 2026-08-09T00:00:00+00:00\n"
+"Language: en\n"
+
+msgid "plugins.themes.myjournal.name"
+msgstr "Accessible Theme"
+
+msgid "plugins.themes.myjournal.description"
+msgstr "Child of the Health Sciences theme, restyled for a disability studies journal."
+
+msgid "plugins.themes.myjournal.homepageLabel"
+msgstr "Journal"
+
+msgid "plugins.themes.myjournal.heroLabel"
+msgstr "Universitas Brawijaya"
+
+msgid "plugins.themes.myjournal.heroTitle"
+msgstr "Research, empowerment, and inclusive practice"
+
+msgid "plugins.themes.myjournal.heroTagline"
+msgstr "Pioneering disability studies in Indonesia"
+
+msgid "plugins.themes.myjournal.heroSubmit"
+msgstr "Submit a manuscript"
+
+msgid "plugins.themes.myjournal.heroCurrentIssue"
+msgstr "Current issue"
+
+msgid "plugins.themes.myjournal.navToggle"
+msgstr "Open or close the menu"
+
+msgid "plugins.themes.myjournal.siteNav"
+msgstr "Site"
+
+msgid "plugins.themes.myjournal.htmlGalleyLabel"
+msgstr "Full text (HTML)"
+
+msgid "plugins.themes.myjournal.htmlGalleyBack"
+msgstr "Back to article page"
+
+msgid "plugins.themes.myjournal.htmlGalleyToc"
+msgstr "Contents"
+
+msgid "plugins.themes.myjournal.themeDark"
+msgstr "Switch to dark mode"
+
+msgid "plugins.themes.myjournal.themeLight"
+msgstr "Switch to light mode"
+
+msgid "plugins.themes.myjournal.skipToContent"
+msgstr "Skip to main content"
+
+msgid "plugins.themes.myjournal.option.accentColour.label"
+msgstr "Accent colour (submit button)"
+
+msgid "plugins.themes.myjournal.option.accentColour.description"
+msgstr "Gold used for the homepage submit button and skip link. Journal navy (#112d52) is not configurable."
+
+msgid "plugins.themes.myjournal.option.enableThemeToggle.label"
+msgstr "Dark mode toggle"
+
+msgid "plugins.themes.myjournal.option.enableThemeToggle.description"
+msgstr "Show the light/dark control in the site header."
+
+msgid "plugins.themes.myjournal.option.enableThemeToggle.yes"
+msgstr "Show"
+
+msgid "plugins.themes.myjournal.option.enableThemeToggle.no"
+msgstr "Hide"
+
+msgid "plugins.themes.myjournal.option.heroLabel.label"
+msgstr "Hero label"
+
+msgid "plugins.themes.myjournal.option.heroTitle.label"
+msgstr "Hero title"
+
+msgid "plugins.themes.myjournal.option.heroTagline.label"
+msgstr "Hero tagline"
+
+msgid "plugins.themes.myjournal.option.heroText.description"
+msgstr "Leave blank to use the theme’s default text for the current locale."
+
+msgid "plugins.themes.myjournal.archiveSortLabel"
+msgstr "Sort issues"
+
+msgid "plugins.themes.myjournal.archiveSortNewest"
+msgstr "Newest first"
+
+msgid "plugins.themes.myjournal.archiveSortOldest"
+msgstr "Oldest first"
+
+msgid "plugins.themes.myjournal.archiveYearLabel"
+msgstr "Year"
+
+msgid "plugins.themes.myjournal.archiveYearAll"
+msgstr "All years"
+
+msgid "plugins.themes.myjournal.archiveApply"
+msgstr "Apply"
+
+msgid "plugins.themes.myjournal.archiveEmptyYear"
+msgstr "No issues were published in that year."
