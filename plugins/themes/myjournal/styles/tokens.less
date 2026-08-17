@@ -1,0 +1,136 @@
+/* My Journal tokens, base type, a11y */
+
+@font-sans: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
+@font-serif: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
+
+@primary: #112d52;
+@primary-light: #dbe6f5;
+@primary-text: #0a1a33;
+@primary-link: #1a406e;
+@contrast: #ffffff;
+@btn-border-colour: @primary;
+@black: #142033;
+@dark-grey: #1e3a5f;
+@mid-grey: #5a6b82;
+@light-grey: #eef2f7;
+
+@sldpi-navy-deep: #0a1a33;
+@sldpi-navy-mid: #1a406e;
+@sldpi-accent: #c45c26;
+@mj-gold: #d9b800;
+@mj-gold-hover: #e6c61a;
+
+:root {
+	--mj-bg: #ffffff;
+	--mj-bg-soft: #eef2f7;
+	--mj-surface: #ffffff;
+	--mj-ink: #142033;
+	--mj-muted: #5a6b82;
+	--mj-line: #d5deea;
+	--mj-brand: #112d52;
+	--mj-brand-soft: #dbe6f5;
+	--mj-link: #1a406e;
+	--mj-link-hover: #112d52;
+	--mj-gold: @mj-gold;
+	--mj-gold-hover: @mj-gold-hover;
+	--mj-focus: #112d52;
+	--mj-hero-from: #0a1a33;
+	--mj-hero-mid: #112d52;
+	--mj-hero-to: #1a406e;
+	color-scheme: light;
+}
+
+html[data-theme="dark"] {
+	--mj-bg: #0b1524;
+	--mj-bg-soft: #122033;
+	--mj-surface: #15263c;
+	--mj-ink: #e8eef7;
+	--mj-muted: #9aacc4;
+	--mj-line: #2a3d57;
+	--mj-brand: #7ed4c8;
+	--mj-brand-soft: #1a3d3a;
+	--mj-link: #7ed4c8;
+	--mj-link-hover: #a8ebe3;
+	--mj-gold: @mj-gold;
+	--mj-gold-hover: @mj-gold-hover;
+	--mj-focus: #7ed4c8;
+	--mj-hero-from: #06101f;
+	--mj-hero-mid: #0a1a33;
+	--mj-hero-to: #112d52;
+	color-scheme: dark;
+}
+
+// Skip link — first focusable control (sticky header offset)
+.myjournal-skip {
+	position: absolute;
+	left: 0.75rem;
+	top: 0.75rem;
+	z-index: 1100;
+	padding: 0.55rem 0.9rem;
+	border-radius: 6px;
+	background: var(--mj-gold);
+	color: #0a1a33;
+	font-weight: 600;
+	font-family: @font-sans;
+	text-decoration: none;
+	transform: translateY(-200%);
+	transition: transform 0.15s ease;
+
+	&:focus,
+	&:focus-visible {
+		transform: translateY(0);
+		outline: 3px solid var(--mj-focus);
+		outline-offset: 3px;
+	}
+}
+
+.myjournal-main:focus {
+	outline: 0;
+}
+
+body {
+	font-family: @font-sans;
+	font-size: 1.125rem;
+	line-height: 1.65;
+	color: var(--mj-ink);
+	background: var(--mj-bg);
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.navbar, .btn, input, select, textarea, button {
+	font-family: @font-sans;
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.nav-link:focus-visible,
+.dropdown-item:focus-visible {
+	outline: 3px solid var(--mj-focus);
+	outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+a {
+	color: var(--mj-link);
+
+	&:hover,
+	&:focus {
+		color: var(--mj-brand);
+	}
+}
+

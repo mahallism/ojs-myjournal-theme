@@ -1,0 +1,532 @@
+/* Inner pages: search, archive, article, about/submissions */
+
+.page-header h1 {
+	color: var(--mj-brand);
+	font-weight: 700;
+}
+
+.alert-primary {
+	background: var(--mj-brand-soft);
+	border-color: var(--mj-line);
+	color: var(--mj-ink);
+
+	a {
+		color: var(--mj-link);
+		font-weight: 600;
+	}
+}
+
+// Search — stacked article cards + sticky filter panel
+.page-search {
+	.search-results {
+		display: flex;
+		flex-direction: column;
+		gap: 1.15rem;
+	}
+
+	.search-results .article-summary {
+		margin: 0;
+	}
+
+	.search-filters {
+		padding: 1.25rem 1.35rem;
+		border: 1px solid var(--mj-line);
+		border-radius: 12px;
+		background: var(--mj-surface);
+
+		h2 {
+			margin: 0 0 1.25rem;
+			font-size: 1.15rem;
+			font-weight: 700;
+			color: var(--mj-brand);
+		}
+
+		label {
+			font-weight: 600;
+			color: var(--mj-ink);
+		}
+
+		.form-control {
+			background: var(--mj-bg);
+			border-color: var(--mj-line);
+			color: var(--mj-ink);
+		}
+	}
+
+	.pagination {
+		margin-top: 1.75rem;
+		color: var(--mj-muted);
+
+		a {
+			color: var(--mj-link);
+		}
+
+		strong {
+			color: var(--mj-brand);
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.page-search .search-filters {
+		position: sticky;
+		top: 5.5rem;
+	}
+}
+
+// Issue archive — card grid matching homepage TOC
+.myjournal-archive {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	gap: 1.35rem;
+}
+
+.myjournal-archive-toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 0.85rem 1.25rem;
+	margin: 0 0 1.5rem;
+}
+
+.myjournal-archive-sort {
+	display: inline-flex;
+	border: 1px solid var(--mj-line);
+	border-radius: 8px;
+	overflow: hidden;
+	background: var(--mj-surface);
+
+	&__btn {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.45rem 0.85rem;
+		font-size: 0.88rem;
+		font-weight: 600;
+		font-family: @font-sans;
+		color: var(--mj-link);
+		text-decoration: none;
+		border-right: 1px solid var(--mj-line);
+
+		&:last-child {
+			border-right: 0;
+		}
+
+		&:hover,
+		&:focus {
+			color: var(--mj-brand);
+			background: var(--mj-brand-soft);
+			text-decoration: none;
+		}
+
+		&.is-active {
+			color: #ffffff;
+			background: @primary;
+		}
+	}
+}
+
+.myjournal-archive-year {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.45rem 0.65rem;
+
+	&__label {
+		font-size: 0.88rem;
+		font-weight: 600;
+		color: var(--mj-brand);
+	}
+
+	&__select {
+		min-height: 2.4rem;
+		padding: 0.3rem 0.55rem;
+		border: 1px solid var(--mj-line);
+		border-radius: 6px;
+		background: var(--mj-surface);
+		color: var(--mj-ink);
+		font-family: @font-sans;
+	}
+
+	&__submit {
+		min-height: 2.4rem;
+		padding: 0.3rem 0.75rem;
+		border: 1px solid @primary;
+		border-radius: 6px;
+		background: @primary;
+		color: #ffffff;
+		font-size: 0.88rem;
+		font-weight: 600;
+		font-family: @font-sans;
+		cursor: pointer;
+	}
+}
+
+.myjournal-archive-empty {
+	margin: 0 0 2rem;
+	color: var(--mj-muted);
+}
+
+@media (min-width: 768px) {
+	.myjournal-archive {
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+		gap: 0.85rem;
+	}
+
+	.issue-summary .card-body {
+		padding: 0.7rem 0.75rem 0.85rem;
+	}
+
+	.issue-summary-series {
+		font-size: 0.92rem;
+	}
+
+	.issue-summary-title,
+	.issue-summary-date {
+		font-size: 0.78rem;
+	}
+}
+
+.issue-summary {
+	height: 100%;
+	margin-bottom: 0;
+	border: 1px solid var(--mj-line);
+	border-radius: 12px;
+	background: var(--mj-surface);
+	overflow: hidden;
+	box-shadow: none;
+
+	.card-body {
+		padding: 1rem 1.1rem 1.15rem;
+	}
+}
+
+.issue-summary-cover {
+	max-width: none;
+	width: 100%;
+	height: auto;
+	border-bottom: 1px solid var(--mj-line);
+}
+
+.issue-summary-series {
+	margin: 0 0 0.35rem;
+	font-size: 1.05rem;
+	font-weight: 700;
+	line-height: 1.35;
+
+	a {
+		color: var(--mj-brand);
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: var(--mj-link);
+			text-decoration: underline;
+		}
+	}
+}
+
+.issue-summary-title,
+.issue-summary-date {
+	margin: 0 0 0.35rem;
+	font-size: 0.9rem;
+	color: var(--mj-muted);
+}
+
+.issue-summary-title:last-child,
+.issue-summary-date:last-child {
+	margin-bottom: 0;
+}
+
+.page-archives .cmp_pagination,
+.page-search .pagination {
+	margin-top: 2rem;
+}
+
+// Article details — match homepage cards (surface, border, bold headings)
+.page-article {
+	padding-top: 1.5rem;
+	padding-bottom: 2.5rem;
+}
+
+.article-details-fulltitle,
+.article-details h1 {
+	font-weight: 700;
+	color: var(--mj-brand);
+	line-height: 1.25;
+}
+
+.article-details-issue-identifier {
+	font-family: @font-sans;
+	font-weight: 600;
+
+	a {
+		color: var(--mj-link);
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: var(--mj-brand);
+		}
+	}
+}
+
+.article-details-issue-section,
+.article-details-doi,
+.article-details-published {
+	color: var(--mj-muted);
+}
+
+.article-details-heading,
+.article-details .item > .label {
+	margin: 0 0 0.45rem;
+	font-size: 1.15rem;
+	font-weight: 700;
+	line-height: 1.3;
+	color: var(--mj-brand);
+}
+
+.article-details-block,
+.article-details .item {
+	margin-bottom: 1.5rem;
+}
+
+.article-details-main,
+#articleMain {
+	background: var(--mj-surface);
+	border: 1px solid var(--mj-line);
+	border-radius: 12px;
+	padding: 1.25rem 1.35rem 1.4rem;
+}
+
+.article-details-sidebar {
+	.article-details-block {
+		padding-bottom: 1.15rem;
+		margin-bottom: 1.15rem;
+		border-bottom: 1px solid var(--mj-line);
+	}
+
+	.article-details-block:last-child {
+		border-bottom: 0;
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+}
+
+.article-details-abstract {
+	line-height: 1.65;
+}
+
+.authors-string .author-string-href {
+	color: var(--mj-link);
+
+	&:hover,
+	&.active {
+		color: var(--mj-brand);
+	}
+}
+
+.article-details-bio-toggle {
+	color: var(--mj-link);
+
+	&:hover,
+	&:focus {
+		color: var(--mj-brand);
+	}
+}
+
+.article-details-galleys .btn,
+.article-details-galley .btn {
+	display: inline-flex;
+	align-items: center;
+	font-weight: 600;
+	font-size: 0.8rem;
+	padding: 0.28rem 0.65rem;
+	border-radius: 4px;
+}
+
+.article-details-keywords-value span {
+	display: inline-block;
+	margin: 0 0.35rem 0.35rem 0;
+	padding: 0.15rem 0.5rem;
+	border: 1px solid var(--mj-line);
+	border-radius: 4px;
+	font-size: 0.85rem;
+	background: var(--mj-bg-soft);
+}
+
+@media (min-width: 992px) {
+	.article-details-main,
+	#articleMain {
+		padding: 1.75rem 2rem 1.85rem;
+	}
+
+	.article-details-main {
+		.article-details-heading,
+		.item > .label {
+			margin-bottom: 0.45rem;
+			font-size: 1.15rem;
+			color: var(--mj-brand);
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.article-details-fulltitle {
+		margin-top: 1rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.article-blocks-mobile > * {
+		margin-bottom: 1.35rem;
+	}
+}
+
+// About / submissions / similar text pages
+.page-about .page-content,
+.page-submissions .page-content,
+.page-contact .page-content,
+.page-privacy .page-content,
+.page-information .page-content {
+	color: var(--mj-ink);
+
+	h2, h3 {
+		color: var(--mj-brand);
+		font-weight: 700;
+	}
+}
+
+// Login / register / lost password — card form, body-sized type
+.page-login,
+.page-register,
+.page-register-complete,
+.page-lost-password {
+	.page-header {
+		margin-top: 1.75rem;
+		margin-bottom: 1.15rem;
+
+		h1 {
+			font-family: @font-sans;
+			font-weight: 700;
+			color: var(--mj-brand);
+		}
+	}
+
+	.page-content {
+		margin-bottom: 2.5rem;
+		padding: 1.35rem 1.45rem 1.5rem;
+		border: 1px solid var(--mj-line);
+		border-top: 1px solid var(--mj-line);
+		border-radius: 12px;
+		background: var(--mj-surface);
+		font-size: 1rem;
+		line-height: 1.55;
+		color: var(--mj-ink);
+
+		a {
+			color: var(--mj-link);
+			font-weight: 600;
+
+			&:hover,
+			&:focus {
+				color: var(--mj-link-hover);
+			}
+		}
+	}
+
+	label,
+	.form-check-label {
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: var(--mj-ink);
+	}
+
+	.form-control {
+		border-color: var(--mj-line);
+		border-radius: 6px;
+		font-size: 1rem;
+	}
+
+	.form-group-register,
+	.form-group-login {
+		font-size: 0.9rem;
+		margin-bottom: 0;
+	}
+
+	.btn-primary {
+		font-weight: 600;
+		padding: 0.45rem 1.15rem;
+		border-radius: 6px;
+	}
+}
+
+#loginModal .modal-content {
+	border: 1px solid var(--mj-line);
+	border-radius: 12px;
+}
+
+#loginModal .form-login {
+	font-size: 0.95rem;
+}
+
+// Footer sidebar sits on navy — keep text/links light in both themes
+.site-footer {
+	background: @primary;
+	color: #ffffff;
+	font-size: 0.9rem;
+	line-height: 1.5;
+
+	.pkp_block,
+	.block {
+		background: transparent;
+		color: #ffffff;
+		font-size: 0.9rem;
+	}
+
+	.title {
+		margin-bottom: 0.4em;
+		color: #ffffff;
+		font-size: 1.05rem;
+		font-weight: 700;
+		line-height: 1.3;
+	}
+
+	p, li, a {
+		font-size: 0.9rem;
+	}
+
+	a:not(.btn) {
+		color: #ffffff !important;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: #7ed4c8 !important;
+		}
+	}
+
+	.block_make_submission_link {
+		font-size: 0.85rem;
+		font-weight: 600;
+		padding: 0.35rem 0.75rem;
+		color: @primary-text !important;
+		background: #ffffff;
+		border-color: #ffffff;
+
+		&:hover,
+		&:focus {
+			color: @primary-text !important;
+			background: #7ed4c8;
+			border-color: #7ed4c8;
+		}
+	}
+}
+
+.site-footer-sidebar {
+	border-bottom-color: fade(#ffffff, 28%);
+}
+
+.site-footer-content {
+	font-size: 0.9rem;
+	line-height: 1.5;
+}

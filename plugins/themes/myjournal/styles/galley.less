@@ -1,0 +1,214 @@
+/* HTML galley reader and TOC sidebar */
+
+// HTML galley: keep site header; show article metadata + TOC + readable frame
+.myjournal-html-galley {
+	padding-bottom: 2.5rem;
+
+	&__reader {
+		margin-top: 2rem;
+		padding-top: 1.75rem;
+		border-top: 1px solid @light-grey;
+	}
+
+	&__reader-head {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.75rem 1.25rem;
+		margin-bottom: 1rem;
+	}
+
+	&__reader-title {
+		margin: 0;
+		font-size: 1.35rem;
+		font-weight: 700;
+		color: @primary;
+	}
+
+	&__back {
+		font-size: 0.95rem;
+		font-weight: 600;
+		color: @primary-link;
+
+		&:hover,
+		&:focus {
+			color: @primary;
+		}
+	}
+
+	&__notice {
+		margin-bottom: 1rem;
+	}
+
+	&__body {
+		display: grid;
+		gap: 1.25rem;
+		align-items: start;
+	}
+
+	&__toc {
+		min-width: 0;
+	}
+
+	&__toc-details {
+		border: 1px solid fade(@primary, 18%);
+		border-radius: 10px;
+		background: @contrast;
+		padding: 0.65rem 0.85rem 0.85rem;
+	}
+
+	&__toc-summary {
+		cursor: pointer;
+		font-size: 0.85rem;
+		font-weight: 700;
+		font-family: @font-sans;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		color: @primary;
+		list-style: none;
+
+		&::-webkit-details-marker {
+			display: none;
+		}
+
+		&::before {
+			content: "";
+			display: inline-block;
+			width: 0.45rem;
+			height: 0.45rem;
+			margin-right: 0.45rem;
+			border-right: 2px solid currentColor;
+			border-bottom: 2px solid currentColor;
+			transform: rotate(45deg);
+			vertical-align: 0.15rem;
+			transition: transform 0.15s ease;
+		}
+	}
+
+	&__toc-details[open] > .myjournal-html-galley__toc-summary::before {
+		transform: rotate(-135deg);
+		vertical-align: -0.05rem;
+	}
+
+	&__toc-list {
+		list-style: none;
+		margin: 0.75rem 0 0;
+		padding: 0;
+		max-height: 14rem;
+		overflow-y: auto;
+	}
+
+	&__toc-item {
+		margin: 0;
+	}
+
+	&__toc-link {
+		display: block;
+		padding: 0.35rem 0.4rem;
+		border-radius: 4px;
+		border-left: 2px solid transparent;
+		font-size: 0.88rem;
+		font-family: @font-sans;
+		line-height: 1.35;
+		color: @primary-link;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: @primary;
+			background: fade(@primary, 6%);
+			text-decoration: none;
+		}
+
+		&.is-active {
+			color: @primary;
+			border-left-color: @primary;
+			background: fade(@primary, 8%);
+			font-weight: 600;
+		}
+
+		&.is-h1 {
+			font-weight: 700;
+			padding-left: 0.4rem;
+		}
+
+		&.is-h2 {
+			padding-left: 0.4rem;
+		}
+
+		&.is-h3 {
+			padding-left: 1rem;
+			font-size: 0.84rem;
+		}
+
+		&.is-h4 {
+			padding-left: 1.6rem;
+			font-size: 0.8rem;
+			color: @mid-grey;
+		}
+	}
+
+	&__frame-wrap {
+		border: 1px solid fade(@primary, 20%);
+		border-radius: 12px;
+		background: @contrast;
+		overflow: hidden;
+		min-width: 0;
+	}
+
+	&__frame {
+		display: block;
+		width: 100%;
+		min-height: 75vh;
+		height: ~"calc(100vh - 8rem)";
+		border: 0;
+		background: @contrast;
+	}
+}
+
+@media (min-width: 992px) {
+	.myjournal-html-galley {
+		&__body {
+			grid-template-columns: ~"minmax(13rem, 16.5rem)" 1fr;
+		}
+
+		&__toc {
+			position: sticky;
+			top: 5.5rem;
+			align-self: start;
+			z-index: 2;
+		}
+
+		&__toc-details {
+			max-height: ~"calc(100vh - 6.5rem)";
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+		}
+
+		&__toc-details > .myjournal-html-galley__toc-summary {
+			cursor: default;
+			pointer-events: none;
+		}
+
+		&__toc-list {
+			max-height: none;
+			flex: 1 1 auto;
+			overflow-y: auto;
+			padding-right: 0.15rem;
+		}
+	}
+}
+
+
+// Undo Health Sciences fullscreen overlay when our galley layout is used
+.pkp_page_article.pkp_op_view {
+	.myjournal-html-galley {
+		.galley_view,
+		.header_view {
+			position: static;
+		}
+	}
+}
+

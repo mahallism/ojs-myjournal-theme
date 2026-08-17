@@ -1,61 +1,18 @@
-// Custom LESS for My Journal child theme.
-// Parsed before the default stylesheet is compiled so these variables override the parent.
+// My Journal — Health Sciences child stylesheet entrypoint.
+// Brand: SLDPI navy (light), soft turquoise accents (dark).
+// Typeface: Source Sans 3 (self-hosted).
+//
+// LESS pitfalls (wikimedia/less.php in OJS):
+// - Escape CSS min/clamp/max: width: ~"min(12rem, 55vw)";
+// - Never use grid-column with slash span; use start/end properties.
+// Prefer CSS variables (--mj-*) for light/dark; reserve !important for parent fights only.
 
-// Brand colours
-@primary: #1a5f4a;
-@primary-lift: lighten(@primary, 8%);
-@bg-base: #f7f5f0;
-@text: #1c1c1c;
-@bg-border-color: fade(@text, 12%);
+@import "fonts.less";
+@import "tokens.less";
+@import "header.less";
+@import "hero.less";
+@import "homepage.less";
+@import "pages.less";
+@import "galley.less";
+@import "dark.less";
 
-// Typography weight for section titles
-@bold: 700;
-
-// Homepage / issue TOC polish
-.obj_issue_toc .galleys h2,
-.obj_issue_toc .section h2 {
-	font-size: @font-header;
-	font-weight: @bold;
-	color: @primary;
-}
-
-// Custom homepage wrapper (see templates/frontend/pages/indexJournal.tpl)
-.myjournal_homepage {
-	.myjournal_homepage_intro {
-		margin-bottom: 1.5rem;
-		padding-bottom: 1rem;
-		border-bottom: 1px solid @bg-border-color;
-	}
-
-	.myjournal_homepage_intro__label {
-		display: block;
-		font-size: 0.85rem;
-		letter-spacing: 0.04em;
-		text-transform: uppercase;
-		color: @primary;
-		margin-bottom: 0.35rem;
-	}
-
-	.myjournal_homepage_intro__title {
-		margin: 0;
-		font-size: @font-header;
-		font-weight: @bold;
-		color: @text;
-		line-height: 1.25;
-	}
-
-	.page_index_journal .homepage_image img {
-		max-width: 100%;
-		height: auto;
-	}
-}
-
-// Primary link / button accent
-a {
-	color: @primary;
-
-	&:hover,
-	&:focus {
-		color: @primary-lift;
-	}
-}
