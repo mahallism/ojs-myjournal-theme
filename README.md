@@ -2,7 +2,7 @@
 
 Child theme untuk **Open Journal Systems 3.5.0.3**, parent: **Health Sciences** (`healthsciencesthemeplugin` **v1.1.3-1**).
 
-Dirancang untuk jurnal **disability studies**: layout Health Sciences, brand SLDPI, dark mode, kartu TOC, HTML galley selaras tema.
+Dirancang sebagai child theme Health Sciences yang bisa dipakai banyak jurnal: brand colour, aksen, logo, dan hero diatur di **Appearance**. Default tetap navy SLDPI.
 
 ## Mulai cepat
 
@@ -12,6 +12,14 @@ Dirancang untuk jurnal **disability studies**: layout Health Sciences, brand SLD
 4. [ENABLE-AND-TEST.md](ENABLE-AND-TEST.md) — regresi UI + a11y
 5. [OVERRIDES.md](OVERRIDES.md) — file yang di-override (untuk upgrade)
 6. Lokal Laragon: [LOCAL-OJS.md](LOCAL-OJS.md)
+
+Di **Settings → Website → Appearance** (setelah tema dipilih):
+
+- **Brand colour** — header, tautan, hero, footer (default `#112d52`)
+- **Accent colour** — tombol kirim naskah + skip link (default `#d9b800`)
+- **Page Header Logo** — logo jurnal; jika kosong, tema memakai `images/logo-ijds.svg`
+- Teks hero, tombol dark mode
+- Clear Data Caches + Template Cache setelah ganti warna
 
 ```powershell
 powershell -File .\scripts\verify-theme.ps1
@@ -34,7 +42,7 @@ powershell -File .\scripts\verify-theme.ps1
 
 ## Versi
 
-Lihat `plugins/themes/myjournal/version.xml` (saat ini **1.1.10.0**).
+Lihat `plugins/themes/myjournal/version.xml` (saat ini **1.1.11.0**).
 
 ## Referensi
 

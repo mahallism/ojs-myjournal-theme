@@ -16,6 +16,19 @@
 	font-size: 1.15rem;
 }
 
+@media (max-width: 767.98px) {
+	.container-homepage-issue .issue-toc,
+	.page-issue .issue-toc {
+		margin-top: 2.25rem;
+	}
+
+	.container-homepage-issue .issue-toc-section-title,
+	.page-issue .issue-toc-section-title {
+		margin-top: 0.35rem;
+		margin-bottom: 0.85rem;
+	}
+}
+
 .myjournal-issue-kicker {
 	text-align: center;
 	margin: 0 auto 1.75rem;
@@ -30,7 +43,7 @@
 }
 
 .homepage-issue-current {
-	font-size: 0.85rem;
+	font-size: @font-size-min;
 	font-weight: 700;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
@@ -45,7 +58,7 @@
 }
 
 .homepage-issue-published {
-	font-size: 0.95rem;
+	font-size: @font-size-min;
 	font-weight: 600;
 	color: var(--mj-muted);
 }
@@ -104,7 +117,7 @@
 
 .article-summary-title {
 	margin: 0 0 0.45rem;
-	font-size: 1.05rem;
+	font-size: @font-size-min;
 	line-height: 1.35;
 
 	a {
@@ -123,14 +136,14 @@
 .article-summary-authors {
 	margin: 0 0 0.35rem;
 	color: @black;
-	font-size: 0.9rem;
+	font-size: @font-size-min;
 	line-height: 1.45;
 }
 
 .article-summary-date,
 .article-summary-doi {
 	margin: 0 0 0.35rem;
-	font-size: 0.85rem;
+	font-size: @font-size-min;
 }
 
 .article-summary-footer {
@@ -157,6 +170,7 @@
 	max-height: none;
 	overflow: visible;
 	padding-bottom: 0;
+	text-align: left;
 
 	&:after {
 		display: none;
@@ -168,6 +182,7 @@
 		font-weight: 700;
 		color: var(--mj-brand);
 		line-height: 1.3;
+		text-align: left !important;
 	}
 }
 
@@ -180,8 +195,8 @@
 }
 
 .article-summary-pages {
-	color: var(--mj-muted);
-	font-size: 0.85rem;
+	color: var(--mj-brand);
+	font-size: @font-size-min;
 	text-align: left;
 }
 
@@ -197,9 +212,10 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		min-height: 0;
-		padding: 0.2rem 0.55rem;
-		font-size: 0.75rem;
+		min-height: 1.5rem;
+		min-width: 1.5rem;
+		padding: 0.3rem 0.65rem;
+		font-size: @font-size-min;
 		font-weight: 600;
 		line-height: 1.2;
 		border-radius: 4px;
@@ -274,20 +290,20 @@
 		min-height: 2.25rem;
 		padding: 0.4rem 1rem;
 		border-radius: 6px;
-		font-size: 0.9rem;
+		font-size: @font-size-min;
 		font-weight: 600;
 		font-family: @font-sans;
 		line-height: 1.3;
 		background: @primary;
 		border: 1px solid @primary;
-		color: @contrast;
+		color: @header-ink;
 		text-decoration: none;
 
 		&:hover,
 		&:focus {
 			background: @sldpi-navy-mid;
 			border-color: @sldpi-navy-mid;
-			color: @contrast;
+			color: @header-ink;
 			text-decoration: none;
 		}
 	}
@@ -296,13 +312,13 @@
 html[data-theme="dark"] .homepage-issue-description-more .myjournal-more-btn {
 	background: var(--mj-brand);
 	border-color: var(--mj-brand);
-	color: #112d52 !important;
+	color: @primary-text !important;
 
 	&:hover,
 	&:focus {
 		background: var(--mj-link-hover);
 		border-color: var(--mj-link-hover);
-		color: #0a1a33 !important;
+		color: @primary-text !important;
 	}
 }
 
@@ -336,7 +352,7 @@ html[data-theme="dark"] .homepage-issue-description-more .myjournal-more-btn {
 
 	&__title {
 		margin: 0 0 0.65rem;
-		font-size: 1.05rem;
+		font-size: @font-size-min;
 		font-weight: 700;
 		line-height: 1.35;
 
@@ -355,7 +371,7 @@ html[data-theme="dark"] .homepage-issue-description-more .myjournal-more-btn {
 	&__excerpt {
 		flex: 1 1 auto;
 		margin: 0 0 1rem;
-		font-size: 0.98rem;
+		font-size: @font-size-min;
 		line-height: 1.55;
 		color: var(--mj-ink);
 	}
@@ -373,11 +389,11 @@ html[data-theme="dark"] .homepage-issue-description-more .myjournal-more-btn {
 
 	&__date {
 		color: var(--mj-muted);
-		font-size: 0.85rem;
+		font-size: @font-size-min;
 	}
 
 	&__more {
-		font-size: 0.9rem;
+		font-size: @font-size-min;
 		font-weight: 600;
 		color: var(--mj-link);
 

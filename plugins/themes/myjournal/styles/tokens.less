@@ -1,62 +1,80 @@
-/* My Journal tokens, base type, a11y */
+/* My Journal tokens, base type, a11y
+ *
+ * @mj-brand-colour, @mj-gold, @header-ink, @mj-dark-accent, etc. come from
+ * MyJournalThemePlugin::brandLessVariables() (Appearance colour pickers).
+ * Re-apply @primary here so it wins over Health Sciences after parent LESS.
+ */
 
 @font-sans: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
 @font-serif: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
 
-@primary: #112d52;
-@primary-light: #dbe6f5;
-@primary-text: #0a1a33;
-@primary-link: #1a406e;
+/* Fallbacks if Appearance LESS vars are not injected during compile */
+@mj-brand-colour: #112d52;
+@mj-gold: #d9b800;
+@mj-gold-hover: lighten(@mj-gold, 8%);
+@mj-accent-ink: #0a1a33;
+@header-ink: #ffffff;
+@header-logo-filter: ~"brightness(0) invert(1)";
+@mj-dark-accent: #7ed4c8;
+@mj-dark-accent-hover: #a8ebe3;
+
+@primary: @mj-brand-colour;
+
+@primary-light: mix(#ffffff, @primary, 86%);
+@primary-text: darken(@primary, 12%);
+@primary-link: lighten(@primary, 12%);
 @contrast: #ffffff;
 @btn-border-colour: @primary;
 @black: #142033;
-@dark-grey: #1e3a5f;
-@mid-grey: #5a6b82;
+@dark-grey: mix(#1e3a5f, @primary, 55%);
+@mid-grey: #445572;
 @light-grey: #eef2f7;
+/* 17px at 16px root — floor so UI type stays at/above ~16.9px */
+@font-size-min: 1.0625rem;
 
-@sldpi-navy-deep: #0a1a33;
-@sldpi-navy-mid: #1a406e;
+@sldpi-navy-deep: darken(@primary, 10%);
+@sldpi-navy-mid: lighten(@primary, 12%);
 @sldpi-accent: #c45c26;
-@mj-gold: #d9b800;
-@mj-gold-hover: #e6c61a;
 
 :root {
 	--mj-bg: #ffffff;
 	--mj-bg-soft: #eef2f7;
 	--mj-surface: #ffffff;
 	--mj-ink: #142033;
-	--mj-muted: #5a6b82;
+	--mj-muted: #445572;
 	--mj-line: #d5deea;
-	--mj-brand: #112d52;
-	--mj-brand-soft: #dbe6f5;
-	--mj-link: #1a406e;
-	--mj-link-hover: #112d52;
+	--mj-brand: @primary;
+	--mj-brand-soft: @primary-light;
+	--mj-link: @primary-link;
+	--mj-link-hover: @primary;
 	--mj-gold: @mj-gold;
 	--mj-gold-hover: @mj-gold-hover;
-	--mj-focus: #112d52;
-	--mj-hero-from: #0a1a33;
-	--mj-hero-mid: #112d52;
-	--mj-hero-to: #1a406e;
+	--mj-accent-ink: @mj-accent-ink;
+	--mj-focus: @primary;
+	--mj-hero-from: @sldpi-navy-deep;
+	--mj-hero-mid: @primary;
+	--mj-hero-to: @sldpi-navy-mid;
 	color-scheme: light;
 }
 
 html[data-theme="dark"] {
-	--mj-bg: #0b1524;
-	--mj-bg-soft: #122033;
-	--mj-surface: #15263c;
+	--mj-bg: mix(#0b1524, @primary, 88%);
+	--mj-bg-soft: mix(#122033, @primary, 80%);
+	--mj-surface: mix(#15263c, @primary, 72%);
 	--mj-ink: #e8eef7;
 	--mj-muted: #9aacc4;
-	--mj-line: #2a3d57;
-	--mj-brand: #7ed4c8;
-	--mj-brand-soft: #1a3d3a;
-	--mj-link: #7ed4c8;
-	--mj-link-hover: #a8ebe3;
+	--mj-line: mix(#2a3d57, @primary, 65%);
+	--mj-brand: @mj-dark-accent;
+	--mj-brand-soft: mix(#15263c, @mj-dark-accent, 70%);
+	--mj-link: @mj-dark-accent;
+	--mj-link-hover: @mj-dark-accent-hover;
 	--mj-gold: @mj-gold;
 	--mj-gold-hover: @mj-gold-hover;
-	--mj-focus: #7ed4c8;
-	--mj-hero-from: #06101f;
-	--mj-hero-mid: #0a1a33;
-	--mj-hero-to: #112d52;
+	--mj-accent-ink: @mj-accent-ink;
+	--mj-focus: @mj-dark-accent;
+	--mj-hero-from: darken(@primary, 18%);
+	--mj-hero-mid: darken(@primary, 10%);
+	--mj-hero-to: @primary;
 	color-scheme: dark;
 }
 
@@ -69,7 +87,7 @@ html[data-theme="dark"] {
 	padding: 0.55rem 0.9rem;
 	border-radius: 6px;
 	background: var(--mj-gold);
-	color: #0a1a33;
+	color: var(--mj-accent-ink);
 	font-weight: 600;
 	font-family: @font-sans;
 	text-decoration: none;
@@ -94,6 +112,31 @@ body {
 	line-height: 1.65;
 	color: var(--mj-ink);
 	background: var(--mj-bg);
+}
+
+small, .small, .form-text, .badge, .btn-sm,
+.nav-link, .dropdown-item, .navbar,
+.form-control, .form-select, .form-check-label,
+.form-label, .col-form-label, .input-group-text,
+.text-muted, .mid-grey, .text-secondary,
+.fs-6, .breadcrumb, .breadcrumb-item, .page-link,
+.dropdown-menu, .list-group-item, figcaption, caption {
+	font-size: @font-size-min;
+}
+
+.text-muted, .mid-grey, .text-secondary, .form-text {
+	color: var(--mj-muted);
+}
+
+::placeholder {
+	color: var(--mj-muted);
+	opacity: 1;
+}
+
+.btn {
+	font-size: @font-size-min;
+	min-height: 1.5rem;
+	min-width: 1.5rem;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -133,4 +176,3 @@ a {
 		color: var(--mj-brand);
 	}
 }
-

@@ -1,11 +1,20 @@
 /**
  * HTML galley (iframe) styles — match My Journal / Source Sans 3.
  * Loaded in the htmlGalley context by HtmlArticleGalleyPlugin.
+ * @primary / @mj-dark-accent come from Appearance via brandLessVariables().
  */
 
 @import "fonts.less";
 
+@mj-brand-colour: #112d52;
+@mj-dark-accent: #7ed4c8;
+@mj-dark-accent-hover: #a8ebe3;
+@primary: @mj-brand-colour;
 @font-mj: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
+@font-size-min: 1.0625rem;
+@primary-link: lighten(@primary, 12%);
+@primary-text: darken(@primary, 12%);
+@primary-light: mix(#ffffff, @primary, 86%);
 
 body {
 	font-family: @font-mj !important;
@@ -24,18 +33,26 @@ p {
 	line-height: 1.65;
 }
 
+small, .small, h5, h6 {
+	font-size: @font-size-min;
+}
+
+h4 {
+	font-size: 1.125rem;
+}
+
 h1, h2, h3, h4, h5, h6 {
-	color: #112d52;
+	color: @primary;
 	font-weight: 700;
 	scroll-margin-top: 1rem;
 }
 
 a {
-	color: #1a406e;
+	color: @primary-link;
 
 	&:hover,
 	&:focus {
-		color: #112d52;
+		color: @primary;
 	}
 }
 
@@ -46,15 +63,15 @@ a {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #dbe6f5;
+		color: @primary-light;
 	}
 
 	a {
-		color: #7ed4c8;
+		color: @mj-dark-accent;
 
 		&:hover,
 		&:focus {
-			color: #a8ebe3;
+			color: @mj-dark-accent-hover;
 		}
 	}
 }
@@ -77,12 +94,12 @@ body[data-theme="dark"] h3,
 body[data-theme="dark"] h4,
 body[data-theme="dark"] h5,
 body[data-theme="dark"] h6 {
-	color: #dbe6f5;
+	color: @primary-light;
 }
 
 html[data-theme="dark"] a,
 body[data-theme="dark"] a {
-	color: #7ed4c8;
+	color: @mj-dark-accent;
 }
 
 @media (min-width: 992px) {

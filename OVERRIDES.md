@@ -6,7 +6,7 @@ Track these when upgrading OJS or Health Sciences. Paths are relative to `plugin
 |----------|-----------------|--------|
 | `templates/frontend/components/header.tpl` | Health Sciences `header.tpl` | Sticky navy header, logo, icon search, optional theme toggle, skip link |
 | `templates/frontend/components/footer.tpl` | Health Sciences `footer.tpl` | Closes `<main id="myjournal-main">` opened in header |
-| `templates/frontend/pages/issueArchive.tpl` | Health Sciences `issueArchive.tpl` | Five-column issue cards, newest/oldest sort, year filter |
+| `templates/frontend/pages/editorialMasthead.tpl` | Health Sciences `editorialMasthead.tpl` | Full-width two-column editors/board/reviewers |
 | `templates/frontend/objects/article_summary.tpl` | Health Sciences `article_summary.tpl` | Card layout (title → authors → pages/galleys) |
 | `templates/plugins/generic/htmlArticleGalley/templates/display.tpl` | HTML Galley plugin | Site chrome + article metadata + iframe + heading TOC |
 | `styles/custom.less` | (added via `modifyStyle`) | Entrypoint `@import` for split LESS |
@@ -28,4 +28,4 @@ Track these when upgrading OJS or Health Sciences. Paths are relative to `plugin
 - Plugin name: `healthsciencesthemeplugin`
 - Compatible release for OJS 3.5.0.3: **v1.1.3-1**
 - Child removes parent style `htmlFont` and registers `myjournalHtmlGalley` instead
-- Appearance options added by this child: accent colour, dark-mode toggle, hero label/title/tagline. Navy `#112d52` stays hardcoded (parent `baseColour` does not restyle SLDPI).
+- Appearance: **Brand colour** (header/links/hero/footer), accent colour, dark-mode toggle, hero label/title/tagline. Page Header Logo in Appearance overrides the bundled SVG. Health Sciences’ own colour picker is superseded by Brand colour.

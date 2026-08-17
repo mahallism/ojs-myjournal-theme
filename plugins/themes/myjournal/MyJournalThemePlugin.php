@@ -22,6 +22,9 @@ use PKP\plugins\ThemePlugin;
 
 class MyJournalThemePlugin extends ThemePlugin
 {
+	private const BRAND_DEFAULT = '#112d52';
+	private const ACCENT_DEFAULT = '#d9b800';
+
 	/**
 	 * Initialize the theme's styles, scripts and hooks.
 	 * Only run for the currently active theme.
@@ -30,10 +33,16 @@ class MyJournalThemePlugin extends ThemePlugin
 	{
 		$this->setParent('healthsciencesthemeplugin');
 
+		$this->addOption('brandColour', 'colour', [
+			'label' => 'plugins.themes.myjournal.option.baseColour.label',
+			'description' => 'plugins.themes.myjournal.option.baseColour.description',
+			'default' => self::BRAND_DEFAULT,
+		]);
+
 		$this->addOption('accentColour', 'colour', [
 			'label' => 'plugins.themes.myjournal.option.accentColour.label',
 			'description' => 'plugins.themes.myjournal.option.accentColour.description',
-			'default' => '#d9b800',
+			'default' => self::ACCENT_DEFAULT,
 		]);
 
 		$this->addOption('enableThemeToggle', 'radio', [
@@ -66,18 +75,7 @@ class MyJournalThemePlugin extends ThemePlugin
 
 		$request = Application::get()->getRequest();
 		$fontBase = $request->getBaseUrl() . '/' . $this->getPluginPath() . '/fonts';
-		$accent = $this->getOption('accentColour');
-		if (!preg_match('/^#[0-9a-fA-F]{1,6}$/', (string) $accent)) {
-			$accent = '#d9b800';
-		}
-
-		$lessVariables = implode("\n", [
-			'@font-sans: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;',
-			'@font-serif: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;',
-			'@mj-font-base: "' . $fontBase . '";',
-			'@mj-gold: ' . $accent . ';',
-			'@mj-gold-hover: lighten(@mj-gold, 8%);',
-		]);
+		$lessVariables = $this->brandLessVariables($fontBase);
 
 		$this->modifyStyle('stylesheet', [
 			'addLessVariables' => $lessVariables,
@@ -89,7 +87,7 @@ class MyJournalThemePlugin extends ThemePlugin
 
 		$this->addStyle('myjournalHtmlGalley', 'styles/htmlGalley.less', [
 			'contexts' => 'htmlGalley',
-			'addLessVariables' => '@mj-font-base: "' . $fontBase . '";',
+			'addLessVariables' => $lessVariables,
 		]);
 
 		$this->addScript('myjournalTheme', 'js/theme.js');
@@ -104,6 +102,51 @@ class MyJournalThemePlugin extends ThemePlugin
 			'myjournalHeroTitle' => trim((string) $this->getOption('heroTitle')),
 			'myjournalHeroTagline' => trim((string) $this->getOption('heroTagline')),
 		]);
+	}
+
+	/**
+	 * Resolve Appearance colours into LESS variables (header, tokens, HTML galley).
+	 */
+	private function brandLessVariables(string $fontBase): string
+	{
+		$brand = $this->sanitiseHex($this->getOption('brandColour'), self::BRAND_DEFAULT);
+		$accent = $this->sanitiseHex($this->getOption('accentColour'), self::ACCENT_DEFAULT);
+
+		$headerInk = $this->isColourDark($brand) ? '#ffffff' : '#142033';
+		$accentInk = $this->isColourDark($accent) ? '#ffffff' : '#0a1a33';
+		$logoFilter = $this->isColourDark($brand)
+			? '~"brightness(0) invert(1)"'
+			: '~"none"';
+
+		// Keep IJDS turquoise when brand is the default navy; otherwise derive from brand.
+		$useDefaultDarkAccent = strcasecmp($brand, self::BRAND_DEFAULT) === 0;
+
+		return implode("\n", [
+			'@font-sans: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;',
+			'@font-serif: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;',
+			'@mj-font-base: "' . $fontBase . '";',
+			'@mj-brand-colour: ' . $brand . ';',
+			'@primary: @mj-brand-colour;',
+			'@mj-gold: ' . $accent . ';',
+			'@mj-gold-hover: lighten(@mj-gold, 8%);',
+			'@mj-accent-ink: ' . $accentInk . ';',
+			'@header-ink: ' . $headerInk . ';',
+			'@header-logo-filter: ' . $logoFilter . ';',
+			'@mj-dark-accent: ' . ($useDefaultDarkAccent ? '#7ed4c8' : 'lighten(@primary, 42%)') . ';',
+			'@mj-dark-accent-hover: ' . ($useDefaultDarkAccent ? '#a8ebe3' : 'lighten(@primary, 52%)') . ';',
+		]);
+	}
+
+	private function sanitiseHex(mixed $value, string $fallback): string
+	{
+		$value = trim((string) $value);
+		if (preg_match('/^#[0-9a-fA-F]{3}$/', $value)) {
+			return sprintf('#%s%s%s%s%s%s', $value[1], $value[1], $value[2], $value[2], $value[3], $value[3]);
+		}
+		if (preg_match('/^#[0-9a-fA-F]{6}$/', $value)) {
+			return $value;
+		}
+		return $fallback;
 	}
 
 	/**

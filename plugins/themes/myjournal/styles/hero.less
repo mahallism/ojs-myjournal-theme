@@ -12,7 +12,7 @@
 	&__label {
 		display: block;
 		margin: 0 0 0.75rem;
-		font-size: 0.85rem;
+		font-size: @font-size-min;
 		font-weight: 600;
 		letter-spacing: 0.04em;
 		text-transform: none;
@@ -57,13 +57,13 @@
 		&--primary {
 			background: var(--mj-gold);
 			border: 2px solid var(--mj-gold);
-			color: #0a1a33;
+			color: var(--mj-accent-ink);
 
 			&:hover,
 			&:focus {
 				background: var(--mj-gold-hover);
 				border-color: var(--mj-gold-hover);
-				color: #0a1a33;
+				color: var(--mj-accent-ink);
 			}
 		}
 

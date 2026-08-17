@@ -45,6 +45,7 @@ html[data-theme="dark"] {
 	.page-about,
 	.page-submissions,
 	.page-contact,
+	.page-masthead,
 	.page-issue,
 	.page-login,
 	.page-register,
@@ -92,7 +93,7 @@ html[data-theme="dark"] {
 		}
 
 		&.is-active {
-			color: #0a1a33 !important;
+			color: @primary-text !important;
 			background: var(--mj-brand) !important;
 		}
 	}
@@ -104,7 +105,7 @@ html[data-theme="dark"] {
 	.myjournal-archive-year__submit {
 		background: var(--mj-brand) !important;
 		border-color: var(--mj-brand) !important;
-		color: #0a1a33 !important;
+		color: @primary-text !important;
 	}
 
 	.issue-summary {
@@ -155,7 +156,6 @@ html[data-theme="dark"] {
 	.article-summary,
 	.article-summary-title,
 	.article-summary-authors,
-	.article-summary-pages,
 	.issue-toc,
 	.issue-toc-section-title,
 	.homepage-issue-current,
@@ -224,14 +224,14 @@ html[data-theme="dark"] {
 		background: var(--mj-brand) !important;
 		border-color: var(--mj-brand) !important;
 		// Navy text on turquoise fill — keep on hover (parent sets dark bg + our color would clash)
-		color: #112d52 !important;
+		color: @primary-text !important;
 
 		&:hover,
 		&:focus,
 		&:active {
 			background: var(--mj-link-hover) !important;
 			border-color: var(--mj-link-hover) !important;
-			color: #0a1a33 !important;
+			color: @primary-text !important;
 		}
 	}
 
@@ -364,7 +364,6 @@ html[data-theme="dark"] {
 
 	.homepage-announcement-date,
 	.article-details-published,
-	.article-summary-pages,
 	.page-issue-date,
 	.page-issue-doi,
 	.page-issue-doi a,
@@ -394,6 +393,10 @@ html[data-theme="dark"] {
 
 		.article-summary-authors {
 			color: var(--mj-ink);
+		}
+
+		.article-summary-pages {
+			color: var(--mj-brand) !important;
 		}
 
 		.article-summary-footer {
@@ -435,14 +438,14 @@ html[data-theme="dark"] {
 	.myjournal-hero__btn--primary {
 		background: var(--mj-gold) !important;
 		border-color: var(--mj-gold) !important;
-		color: #112d52 !important;
+		color: var(--mj-accent-ink) !important;
 
 		&:hover,
 		&:focus,
 		&:active {
 			background: var(--mj-gold-hover) !important;
 			border-color: var(--mj-gold-hover) !important;
-			color: #0a1a33 !important;
+			color: var(--mj-accent-ink) !important;
 		}
 	}
 
@@ -596,5 +599,17 @@ html[data-theme="dark"] {
 	.site-footer h2,
 	.site-footer h3 {
 		color: #ffffff !important;
+	}
+
+	.myjournal-back-top {
+		background: var(--mj-brand);
+		color: @primary-text;
+		box-shadow: 0 2px 10px fade(#000000, 45%);
+
+		&:hover,
+		&:focus {
+			background: var(--mj-link-hover);
+			color: @primary-text;
+		}
 	}
 }

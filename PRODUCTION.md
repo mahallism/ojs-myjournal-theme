@@ -1,6 +1,6 @@
 # Production deploy — My Journal theme
 
-Target stack: **OJS 3.5.0.3** + **Health Sciences v1.1.3-1** + **My Journal 1.1.10.x**
+Target stack: **OJS 3.5.0.3** + **Health Sciences v1.1.3-1** + **My Journal 1.1.11.x**
 
 This theme only lives under `plugins/themes/myjournal/`. It does not patch OJS core or the database.
 

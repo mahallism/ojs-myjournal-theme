@@ -17,13 +17,13 @@
 {/if}
 
 {capture assign="brand"}{strip}
-	{if $myjournalLogoUrl}
-		<img src="{$myjournalLogoUrl|escape}" alt="{if $currentContext}{$currentContext->getLocalizedName()|escape}{else}{$applicationName|escape}{/if}" class="myjournal-header__logo-img" width="256" height="52">
-	{elseif $displayPageHeaderLogo}
+	{if $displayPageHeaderLogo}
 		<img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}"
 		     {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"
 		     {else}alt="{translate key="common.pageHeaderLogo.altText"}"{/if}
 		     class="myjournal-header__logo-img">
+	{elseif $myjournalLogoUrl}
+		<img src="{$myjournalLogoUrl|escape}" alt="{if $currentContext}{$currentContext->getLocalizedName()|escape}{else}{$applicationName|escape}{/if}" class="myjournal-header__logo-img" width="256" height="52">
 	{elseif $displayPageHeaderTitle}
 		<span class="navbar-logo-text">{$displayPageHeaderTitle|escape}</span>
 	{else}

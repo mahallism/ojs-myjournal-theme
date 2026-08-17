@@ -27,7 +27,7 @@
 	}
 
 	&__back {
-		font-size: 0.95rem;
+		font-size: @font-size-min;
 		font-weight: 600;
 		color: @primary-link;
 
@@ -60,7 +60,7 @@
 
 	&__toc-summary {
 		cursor: pointer;
-		font-size: 0.85rem;
+		font-size: @font-size-min;
 		font-weight: 700;
 		font-family: @font-sans;
 		letter-spacing: 0.02em;
@@ -108,7 +108,7 @@
 		padding: 0.35rem 0.4rem;
 		border-radius: 4px;
 		border-left: 2px solid transparent;
-		font-size: 0.88rem;
+		font-size: @font-size-min;
 		font-family: @font-sans;
 		line-height: 1.35;
 		color: @primary-link;
@@ -139,12 +139,12 @@
 
 		&.is-h3 {
 			padding-left: 1rem;
-			font-size: 0.84rem;
+			font-size: @font-size-min;
 		}
 
 		&.is-h4 {
 			padding-left: 1.6rem;
-			font-size: 0.8rem;
+			font-size: @font-size-min;
 			color: @mid-grey;
 		}
 	}
@@ -160,8 +160,8 @@
 	&__frame {
 		display: block;
 		width: 100%;
-		min-height: 75vh;
-		height: ~"calc(100vh - 8rem)";
+		min-height: 20rem;
+		height: 20rem;
 		border: 0;
 		background: @contrast;
 	}

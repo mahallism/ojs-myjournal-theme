@@ -33,6 +33,13 @@
 	</div>
 </footer><!-- pkp_structure_footer_wrapper -->
 
+<button type="button" class="myjournal-back-top" data-back-top hidden>
+	<span class="visually-hidden">{translate key="plugins.themes.myjournal.backToTop"}</span>
+	<svg class="myjournal-back-top__icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+		<path fill="currentColor" d="M12 4.5l-7 7 1.4 1.4L11 8.8V20h2V8.8l4.6 4.1L19 11.5z"/>
+	</svg>
+</button>
+
 {* Load author biography modals if they exist *}
 {if !empty($smarty.capture.authorBiographyModals|default:""|trim)}
 	{$smarty.capture.authorBiographyModals}

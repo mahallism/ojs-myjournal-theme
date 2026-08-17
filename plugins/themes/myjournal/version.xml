@@ -11,7 +11,7 @@
 <version>
 	<application>myjournal</application>
 	<type>plugins.themes</type>
-	<release>1.1.10.0</release>
+	<release>1.1.12.0</release>
 	<date>2026-08-17</date>
 	<lazy-load>1</lazy-load>
 	<class>MyJournalThemePlugin</class>

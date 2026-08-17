@@ -1,6 +1,6 @@
 # Enable & test checklist — My Journal theme
 
-Target: **OJS 3.5.0.3**, parent **Health Sciences v1.1.3-1**, theme **Accessible Theme** (plugin folder `myjournal`, ≥ 1.1.10).
+Target: **OJS 3.5.0.3**, parent **Health Sciences v1.1.3-1**, theme **Accessible Theme** (plugin folder `myjournal`, ≥ 1.1.11).
 
 Full production steps: [PRODUCTION.md](PRODUCTION.md). Override inventory: [OVERRIDES.md](OVERRIDES.md).
 
@@ -29,9 +29,9 @@ Full production steps: [PRODUCTION.md](PRODUCTION.md). Override inventory: [OVER
 ### Brand & layout
 
 - [x] Layout Health Sciences (bukan Default Theme)
-- [x] Light mode: aksen navy SLDPI `#112d52` (bukan cyan `#10BECA` / hijau lama)
-- [x] Dark mode: aksen turquoise lembut `#7ed4c8` pada tautan/judul kartu
-- [x] Header sticky biru; logo kiri, menu, tools kanan
+- [x] Light mode default: aksen navy `#112d52` (bukan cyan `#10BECA` / hijau lama)
+- [x] Dark mode default: aksen turquoise lembut `#7ed4c8` pada tautan/judul kartu
+- [x] Header sticky brand colour; logo kiri, menu, tools kanan
 - [x] Anak menu dropdown vertikal
 - [x] Hero: label UB, judul, tagline; CTA submit **kuning keemasan**; Current issue outline
 
@@ -56,7 +56,7 @@ Full production steps: [PRODUCTION.md](PRODUCTION.md). Override inventory: [OVER
 
 - [x] Search ikon → expand; submit hanya jika ada query
 - [x] Theme toggle: light/dark + persist `localStorage`; hormati `prefers-color-scheme` bila belum disimpan
-- [x] **Appearance**: accent colour mengubah tombol Submit; hero text override bila diisi; hide dark-mode toggle bila opsi Hide
+- [x] **Appearance**: Brand colour mengubah header/tautan/hero; accent colour mengubah tombol Submit; hero text override bila diisi; hide dark-mode toggle bila opsi Hide; logo Page Header OJS mengalahkan logo bawaan tema
 - [x] Dark mode ikut ke iframe HTML galley
 - [x] Bahasa EN/ID (hero + toggle labels)
 - [x] Tidak ada error CSS 500 / console JS

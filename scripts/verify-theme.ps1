@@ -98,11 +98,11 @@ $less = @(
 	Get-Content -LiteralPath (Join-Path $lessDir 'header.less') -Raw
 	Get-Content -LiteralPath (Join-Path $lessDir 'fonts.less') -Raw
 ) -join "`n"
-if ($less -notmatch '#112d52') {
-	Write-Host "[FAIL] styles missing SLDPI brand #112d52"
+if ($php -notmatch "addOption\('brandColour'" -or $php -notmatch 'BRAND_DEFAULT = ''#112d52''' -or $less -notmatch '@mj-brand-colour') {
+	Write-Host "[FAIL] brand colour option / default navy missing"
 	$failed = $true
 } else {
-	Write-Host "[OK] SLDPI brand colour #112d52"
+	Write-Host "[OK] brand colour option (default #112d52)"
 }
 
 $localeEn = Get-Content -LiteralPath (Join-Path $theme 'locale\en\locale.po') -Raw
@@ -113,12 +113,32 @@ if ($localeEn -notmatch 'plugins\.themes\.myjournal\.heroTagline') {
 	Write-Host "[OK] EN hero strings"
 }
 
+if ($localeEn -notmatch 'plugins\.themes\.myjournal\.option\.baseColour\.label') {
+	Write-Host "[FAIL] EN locale missing brand colour option"
+	$failed = $true
+} else {
+	Write-Host "[OK] EN brand colour option"
+}
+
 $headerTpl = Get-Content -LiteralPath (Join-Path $theme 'templates\frontend\components\header.tpl') -Raw
 if ($headerTpl -notmatch 'myjournal-header' -or $headerTpl -notmatch 'myjournal-header__search') {
 	Write-Host "[FAIL] header missing logo/menu/search layout"
 	$failed = $true
 } else {
 	Write-Host "[OK] header logo-menu-tools layout"
+}
+
+if ($headerTpl -notmatch 'displayPageHeaderLogo' -or $headerTpl -notmatch 'myjournalLogoUrl') {
+	Write-Host "[FAIL] header missing OJS logo or theme logo fallback"
+	$failed = $true
+} else {
+	$logoIf = [regex]::Match($headerTpl, '(?s)\{if \$displayPageHeaderLogo\}.*?\{elseif \$myjournalLogoUrl\}')
+	if (-not $logoIf.Success) {
+		Write-Host "[FAIL] header does not prefer OJS Page Header Logo over bundled logo"
+		$failed = $true
+	} else {
+		Write-Host "[OK] OJS Page Header Logo overrides bundled logo"
+	}
 }
 
 if ($headerTpl -notmatch 'data-theme-toggle' -or $headerTpl -notmatch 'data-search-open') {
@@ -173,11 +193,11 @@ if ($customLess -notmatch '@import "tokens.less"' -or $customLess -notmatch '@im
 	Write-Host "[OK] custom.less imports split stylesheets"
 }
 
-if ($php -notmatch "addOption\('accentColour'" -or $php -notmatch "addOption\('enableThemeToggle'" -or $php -notmatch "addOption\('heroTitle'") {
+if ($php -notmatch "addOption\('brandColour'" -or $php -notmatch "addOption\('accentColour'" -or $php -notmatch "addOption\('enableThemeToggle'" -or $php -notmatch "addOption\('heroTitle'") {
 	Write-Host "[FAIL] Theme Options missing"
 	$failed = $true
 } else {
-	Write-Host "[OK] Theme Options (accent, toggle, hero)"
+	Write-Host "[OK] Theme Options (brand, accent, toggle, hero)"
 }
 
 if ($php -match 'fonts\.googleapis') {

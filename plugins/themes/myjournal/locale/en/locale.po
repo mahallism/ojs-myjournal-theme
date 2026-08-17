@@ -15,7 +15,7 @@ msgid "plugins.themes.myjournal.name"
 msgstr "Accessible Theme"
 
 msgid "plugins.themes.myjournal.description"
-msgstr "Child of the Health Sciences theme, restyled for a disability studies journal."
+msgstr "Child of the Health Sciences theme. Brand colour, accent, logo, and homepage hero are configurable under Appearance."
 
 msgid "plugins.themes.myjournal.homepageLabel"
 msgstr "Journal"
@@ -50,6 +50,9 @@ msgstr "Back to article page"
 msgid "plugins.themes.myjournal.htmlGalleyToc"
 msgstr "Contents"
 
+msgid "plugins.themes.myjournal.backToTop"
+msgstr "Back to top"
+
 msgid "plugins.themes.myjournal.themeDark"
 msgstr "Switch to dark mode"
 
@@ -59,11 +62,17 @@ msgstr "Switch to light mode"
 msgid "plugins.themes.myjournal.skipToContent"
 msgstr "Skip to main content"
 
+msgid "plugins.themes.myjournal.option.baseColour.label"
+msgstr "Brand colour"
+
+msgid "plugins.themes.myjournal.option.baseColour.description"
+msgstr "Header, links, hero, and footer. Default is navy (#112d52). Upload a page header logo under Appearance to replace the bundled logo."
+
 msgid "plugins.themes.myjournal.option.accentColour.label"
 msgstr "Accent colour (submit button)"
 
 msgid "plugins.themes.myjournal.option.accentColour.description"
-msgstr "Gold used for the homepage submit button and skip link. Journal navy (#112d52) is not configurable."
+msgstr "Homepage submit button and skip link. Default is gold (#d9b800)."
 
 msgid "plugins.themes.myjournal.option.enableThemeToggle.label"
 msgstr "Dark mode toggle"
@@ -109,3 +118,12 @@ msgstr "Apply"
 
 msgid "plugins.themes.myjournal.archiveEmptyYear"
 msgstr "No issues were published in that year."
+
+msgid "plugins.themes.myjournal.mastheadPreview"
+msgstr "Sample names for layout preview. They are replaced when editors, board members, or reviewers are added in OJS."
+
+msgid "plugins.themes.myjournal.mastheadEditors"
+msgstr "Editors"
+
+msgid "plugins.themes.myjournal.mastheadBoard"
+msgstr "Editorial board"

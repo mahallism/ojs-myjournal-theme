@@ -15,7 +15,7 @@ msgid "plugins.themes.myjournal.name"
 msgstr "Accessible Theme"
 
 msgid "plugins.themes.myjournal.description"
-msgstr "Child theme dari Health Sciences, disesuaikan untuk jurnal disability studies."
+msgstr "Child theme dari Health Sciences. Warna brand, aksen, logo, dan hero beranda diatur di Appearance."
 
 msgid "plugins.themes.myjournal.homepageLabel"
 msgstr "Jurnal"
@@ -50,6 +50,9 @@ msgstr "Kembali ke halaman artikel"
 msgid "plugins.themes.myjournal.htmlGalleyToc"
 msgstr "Daftar isi"
 
+msgid "plugins.themes.myjournal.backToTop"
+msgstr "Kembali ke atas"
+
 msgid "plugins.themes.myjournal.themeDark"
 msgstr "Ganti ke mode gelap"
 
@@ -59,11 +62,17 @@ msgstr "Ganti ke mode terang"
 msgid "plugins.themes.myjournal.skipToContent"
 msgstr "Lewati ke konten utama"
 
+msgid "plugins.themes.myjournal.option.baseColour.label"
+msgstr "Warna brand"
+
+msgid "plugins.themes.myjournal.option.baseColour.description"
+msgstr "Header, tautan, hero, dan footer. Default navy (#112d52). Unggah logo Page Header di Appearance untuk mengganti logo bawaan tema."
+
 msgid "plugins.themes.myjournal.option.accentColour.label"
 msgstr "Warna aksen (tombol kirim naskah)"
 
 msgid "plugins.themes.myjournal.option.accentColour.description"
-msgstr "Emas untuk tombol kirim di beranda dan skip link. Navy jurnal (#112d52) tidak dapat diubah."
+msgstr "Tombol kirim di beranda dan skip link. Default emas (#d9b800)."
 
 msgid "plugins.themes.myjournal.option.enableThemeToggle.label"
 msgstr "Tombol mode gelap"
@@ -109,3 +118,12 @@ msgstr "Terapkan"
 
 msgid "plugins.themes.myjournal.archiveEmptyYear"
 msgstr "Tidak ada edisi pada tahun itu."
+
+msgid "plugins.themes.myjournal.mastheadPreview"
+msgstr "Nama contoh untuk pratinjau tata letak. Akan diganti setelah editor, dewan, atau reviewer ditambahkan di OJS."
+
+msgid "plugins.themes.myjournal.mastheadEditors"
+msgstr "Editor"
+
+msgid "plugins.themes.myjournal.mastheadBoard"
+msgstr "Dewan editor"
