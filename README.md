@@ -8,7 +8,7 @@ Dirancang untuk jurnal **disability studies**: layout Health Sciences, brand SLD
 
 1. [PREP.md](PREP.md) — backup & parent
 2. [PRODUCTION.md](PRODUCTION.md) — checklist deploy produksi
-3. Salin `plugins/themes/myjournal` ke OJS, enable theme
+3. Salin `plugins/themes/myjournal` ke OJS, enable **Accessible Theme** (nama di Plugins/Appearance; folder tetap `myjournal`)
 4. [ENABLE-AND-TEST.md](ENABLE-AND-TEST.md) — regresi UI + a11y
 5. [OVERRIDES.md](OVERRIDES.md) — file yang di-override (untuk upgrade)
 6. Lokal Laragon: [LOCAL-OJS.md](LOCAL-OJS.md)

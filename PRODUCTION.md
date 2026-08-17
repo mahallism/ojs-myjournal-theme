@@ -17,8 +17,8 @@ This theme only lives under `plugins/themes/myjournal/`. It does not patch OJS c
 
 1. Copy repo folder `plugins/themes/myjournal/` → `OJS_ROOT/plugins/themes/myjournal/`
    - Folder name must be exactly `myjournal`
-2. Enable **My Journal** under **Settings → Website → Plugins**
-3. Select **My Journal** under **Settings → Website → Appearance** → Save
+2. Enable **Accessible Theme** under **Settings → Website → Plugins**
+3. Select **Accessible Theme** under **Settings → Website → Appearance** → Save
 4. **Administration → Clear Data Caches** and **Clear Template Cache**
 5. Hard-refresh the journal homepage and run [ENABLE-AND-TEST.md](ENABLE-AND-TEST.md)
 
@@ -38,7 +38,7 @@ Re-diff every file listed in [OVERRIDES.md](OVERRIDES.md) against the new parent
 ## Rollback
 
 1. Appearance → switch theme back to Health Sciences (or Default)
-2. Optionally disable My Journal plugin
+2. Optionally disable the Accessible Theme plugin
 3. Restore previous `plugins/themes/myjournal/` from backup if needed
 
 No database migration is required to roll back.

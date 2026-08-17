@@ -1,6 +1,6 @@
 # Enable & test checklist — My Journal theme
 
-Target: **OJS 3.5.0.3**, parent **Health Sciences v1.1.3-1**, theme **My Journal ≥ 1.1.10**.
+Target: **OJS 3.5.0.3**, parent **Health Sciences v1.1.3-1**, theme **Accessible Theme** (plugin folder `myjournal`, ≥ 1.1.10).
 
 Full production steps: [PRODUCTION.md](PRODUCTION.md). Override inventory: [OVERRIDES.md](OVERRIDES.md).
 
@@ -16,8 +16,8 @@ Full production steps: [PRODUCTION.md](PRODUCTION.md). Override inventory: [OVER
 ## Enable & aktifkan
 
 1. Login sebagai Journal Manager / Site Admin.
-2. **Settings → Website → Plugins** → enable **Health Sciences**, lalu enable **My Journal**.
-3. **Settings → Website → Appearance** → pilih theme **My Journal** → Save.
+2. **Settings → Website → Plugins** → enable **Health Sciences**, lalu enable **Accessible Theme**.
+3. **Settings → Website → Appearance** → pilih theme **Accessible Theme** → Save.
 4. **Administration → Clear Data Caches** dan **Clear Template Cache**.
 
 

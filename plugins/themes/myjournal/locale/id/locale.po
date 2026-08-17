@@ -12,7 +12,7 @@ msgstr ""
 "Language: id\n"
 
 msgid "plugins.themes.myjournal.name"
-msgstr "My Journal"
+msgstr "Accessible Theme"
 
 msgid "plugins.themes.myjournal.description"
 msgstr "Child theme dari Health Sciences, disesuaikan untuk jurnal disability studies."

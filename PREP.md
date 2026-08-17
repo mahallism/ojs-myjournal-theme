@@ -16,7 +16,7 @@ Instalasi lokal (Laragon) tercatat di [LOCAL-OJS.md](LOCAL-OJS.md).
 
 1. Unduh [healthSciences-v1_1_3-1.tar.gz](https://github.com/pkp/healthSciences/releases/download/v1_1_3-1/healthSciences-v1_1_3-1.tar.gz).
 2. Ekstrak ke `plugins/themes/healthSciences/` (nama folder tanpa sufiks versi).
-3. Enable **Health Sciences** di **Settings → Website → Plugins** *sebelum* memilih My Journal di Appearance.
+3. Enable **Health Sciences** di **Settings → Website → Plugins** *sebelum* memilih **Accessible Theme** di Appearance.
 4. Jangan pakai **v1.1.3-2** pada OJS 3.5.0.3 — rilis itu untuk 3.5.0-4+.
 
 ## Checklist backup (lakukan di server/staging OJS Anda)
